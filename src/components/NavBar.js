@@ -6,7 +6,6 @@ import {
   Collapse,
   Container,
   Navbar,
-  NavbarToggler,
   NavbarBrand,
   Nav,
   NavItem,
@@ -23,7 +22,6 @@ import { useAuth0 } from "../react-auth0-spa";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
-  const toggle = () => setIsOpen(!isOpen);
 
   const logoutWithRedirect = () =>
     logout({
@@ -35,7 +33,6 @@ const NavBar = () => {
       <Navbar color="light" light expand="md">
         <Container>
           <NavbarBrand className="logo" />
-          <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
